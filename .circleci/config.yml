@@ -187,6 +187,10 @@ jobs:
           paths:
             - project/.circleci/ansible/inventory.txt
       # Here's where you will add some code to rollback on failure
+      - slack/notify:
+          channel: C01LZBDG5DJ
+          event: fail
+          template: basic_fail_1
 
   configure-infrastructure:
     docker:
@@ -206,6 +210,10 @@ jobs:
             # Your code here
             exit 1
       # Here's where you will add some code to rollback on failure
+      - slack/notify:
+          channel: C01LZBDG5DJ
+          event: fail
+          template: basic_fail_1
 
   run-migrations:
     docker:
@@ -223,6 +231,10 @@ jobs:
             # Your code here
             exit 1
      # Here's where you will add some code to rollback on failure
+     - slack/notify:
+          channel: C01LZBDG5DJ
+          event: fail
+          template: basic_fail_1
 
   deploy-frontend:
     docker:
@@ -244,6 +256,10 @@ jobs:
           command: |
             # your code here
       # Here's where you will add some code to rollback on failure
+      - slack/notify:
+          channel: C01LZBDG5DJ
+          event: fail
+          template: basic_fail_1
 
   deploy-backend:
     docker:
@@ -261,6 +277,10 @@ jobs:
           command: |
             # your code here
       # Here's where you will add some code to rollback on failure
+      - slack/notify:
+          channel: C01LZBDG5DJ
+          event: fail
+          template: basic_fail_1
 
   smoke-test:
     docker:
@@ -284,6 +304,10 @@ jobs:
           command: |
             # your code here
       # Here's where you will add some code to rollback on failure
+      - slack/notify:
+          channel: C01LZBDG5DJ
+          event: fail
+          template: basic_fail_1
 
   cloudfront-update:
     docker:
@@ -299,6 +323,10 @@ jobs:
           command: |
             # your code here
       # Here's where you will add some code to rollback on failure
+      - slack/notify:
+          channel: C01LZBDG5DJ
+          event: fail
+          template: basic_fail_1
 
   cleanup:
     docker:
